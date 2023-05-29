@@ -31,11 +31,11 @@ export default {
 </script>
 
 <template>
-  <v-container fluid>
+  <v-container>
     <v-row justify="center">
       <v-dialog v-model="dialog" persistent width="1024">
         <template v-slot:activator="{ props }">
-          <v-btn color="primary" v-bind="props"> Add film </v-btn>
+          <v-btn class="button" color="primary" v-bind="props"> Add film </v-btn>
         </template>
         <v-card>
           <v-card-title>
@@ -75,10 +75,11 @@ export default {
             </v-container>
           </v-card-text>
           <v-card-actions>
-            <v-btn color="blue-darken-1" variant="text" @click="dialog = false">
+            <v-btn class="button" color="blue-darken-1" variant="text" @click="dialog = false">
               Close
             </v-btn>
             <v-btn
+              class="button"
               color="blue-darken-1"
               variant="text"
               @click.prevent="
@@ -94,12 +95,13 @@ export default {
     </v-row>
 
     <v-row>
-      <v-col v-for="(film, index) in films" lg="3" cols="12">
-        <h3>{{ film.title }}</h3>
-        <h4>{{ film.director }}</h4>
-        <h5>{{ film.release }}</h5>
-        <p>{{ film.summary }}</p>
+      <v-col v-for="(film, index) in films" class="film-card" lg="3" cols="12" >
+        <h3 class="film-card__title">{{ film.title }}</h3>
+        <h4 class="film-card__director">{{ film.director }}</h4>
+        <h5 class="film-card__release">{{ film.release }}</h5>
+        <p class="film-card__summary">{{ film.summary }}</p>
         <v-btn
+          class="button"
           color="primary"
           @click.prevent="removeElement(index)"
           type="submit"
@@ -109,7 +111,7 @@ export default {
 
         <v-dialog>
           <template v-slot:activator="{ props }">
-            <v-btn color="primary" v-bind="props"> edit </v-btn>
+            <v-btn class="button" color="primary" v-bind="props"> edit </v-btn>
           </template>
           <v-card>
             <v-card-title>

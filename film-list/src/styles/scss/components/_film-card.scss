@@ -1,0 +1,23 @@
+.film-card {
+  border: $border;
+  margin: $aria;
+
+  &__title {
+    @include title;
+    margin-bottom: $aria;
+    margin-top: 0;
+  }
+
+  &__director {
+    margin-bottom: $aria;
+  }
+
+  &__release {
+    margin-bottom: $aria;
+  }
+
+  &__summary {
+    @include summary;
+    margin-bottom: $aria-double;
+  }
+}

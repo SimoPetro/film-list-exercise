@@ -1,0 +1,12 @@
+@mixin title {
+  color: $main-orange;
+  font-family: $main-font;
+  font-size: $font-size-xl;
+  font-weight: $font-bold;
+}
+
+@mixin summary {
+  font-family: $main-font;
+  font-size: $font-size-base;
+  font-weight: $font-light;
+}
